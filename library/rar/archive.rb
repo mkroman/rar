@@ -2,23 +2,6 @@
 
 module RAR
   class Archive
-    # A list of messages of what the process exit code might indicate.
-    ExitCodeMessages = {
-      0 => 'Successful operation.',
-      1 => 'Non fatal error(s) occurred.',
-      2 => 'A fatal error occurred.',
-      3 => 'Invalid checksum. Data is damaged.',
-      4 => 'Attempt to modify an archive locked by \'k\' command.',
-      5 => 'Write error.',
-      6 => 'File open error.',
-      7 => 'Wrong command line option.',
-      8 => 'Not enough memory.',
-      9 => 'File creation error.',
-      10 => 'No files matching the specified mask and options were found.',
-      11 => 'Wrong password.',
-      255 => 'User stopped the process.'
-    }
-
     # @return [Array] the list of files.
     attr_accessor :files
 

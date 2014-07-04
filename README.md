@@ -3,6 +3,9 @@
 RAR is a Ruby wrapper for the command-line application `rar`, also known as
 WinRAR for Windows. A free evaluation copy can be obtained from [RarLab](http://rarlab.com).
 
+[![Build Status](https://travis-ci.org/mkroman/rar.svg)](https://travis-ci.org/mkroman/rar)
+[![Dependency Status](https://gemnasium.com/mkroman/rar.svg)](https://gemnasium.com/mkroman/rar)
+
 ## Installation
 
 `gem install rar`

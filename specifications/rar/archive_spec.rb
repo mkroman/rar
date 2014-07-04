@@ -28,4 +28,25 @@ describe RAR::Archive do
       end
     end
   end
+
+  describe '#create!' do
+    let(:process) { double :process, pid: 100 }
+
+    before do
+      allow(IO).to receive(:popen).and_return process
+      allow(Process).to receive(:wait2).and_return [1, 0]
+    end
+
+    it 'executes the rar executable' do
+      expect(IO).to receive(:popen).with /^#{RAR.executable}/
+
+      subject.create!
+    end
+
+    it 'raises an error if exit code is > 1' do
+      allow(Process).to receive(:wait2).and_return [100, 7]
+
+      expect { subject.create! }.to raise_error RAR::CommandLineError
+    end
+  end
 end

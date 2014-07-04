@@ -47,16 +47,19 @@ module RAR
 
     # Create the final archive.
     #
-    # @raise CommandLineError if the exit code indicates an error.
     # @return true if the command executes without a hitch.
+    # @raise CommandLineError if the exit code indicates an error.
     def create!
-      `#{command_line}`
+      rar_process = IO.popen command_line
 
-      if $? > 1
-        if message = ExitCodeMessage[$?]
+      # Wait for the child rar process to finish.
+      pid, exit_status = Process.wait2 rar_process.pid
+
+      if exit_status > 1
+        if message = ExitCodeMessages[exit_status]
           raise CommandLineError, message
         else
-          raise CommandLineError, "Unknown exit code: #{$?}"
+          raise CommandLineError, "Unknown exit status: #{exit_status}"
         end
       else
         true

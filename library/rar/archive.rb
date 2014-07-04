@@ -60,15 +60,9 @@ module RAR
     end
 
     # Create the final archive.
-    def create
+    def create!
       `#{command_line}`
 
-      case $?
-      when 2..11
-        raise 
-      else 
-        return true
-      end
       if $? == 0
         return true
       else

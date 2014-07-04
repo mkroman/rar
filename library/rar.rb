@@ -8,8 +8,8 @@ require 'rar/archive'
 require 'rar/command_line_options'
 
 module RAR
-
-  CriticalError = Class.new StandardError
+  # The standard error for unexpected exit codes.
+  CommandLineError = Class.new StandardError
 
   # Set the path to the executable `rar` file.
   #

@@ -7,3 +7,7 @@ group :development do
   gem 'guard'
   gem 'guard-rspec', require: false
 end
+
+group :doc do
+  gem 'yard'
+end

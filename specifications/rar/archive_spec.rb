@@ -1,6 +1,8 @@
 require_relative '../spec_helper'
 
 describe RAR::Archive do
+  subject { RAR::Archive.new 'archive.rar' }
+  
   describe 'default attributes' do
     it "has a list of files" do
       expect(subject.files).to be_kind_of Array

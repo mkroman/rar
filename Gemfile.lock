@@ -58,6 +58,7 @@ GEM
     timers (1.1.0)
     tzinfo (1.2.1)
       thread_safe (~> 0.1)
+    yard (0.8.7.4)
 
 PLATFORMS
   ruby
@@ -67,3 +68,4 @@ DEPENDENCIES
   guard-rspec
   majic
   rspec
+  yard

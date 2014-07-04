@@ -12,7 +12,7 @@ module RAR
       exclude_path: ->(exclude_path) { 'ep' },
     }
 
-    # @return [Array] The list of command line options.
+    # @return [Array] the list of command line options.
     def to_a
       map do |key, value|
         if block = OptionsMap[key]

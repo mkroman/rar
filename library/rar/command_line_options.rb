@@ -1,6 +1,8 @@
 # encoding: utf-8
 
 module RAR
+  # CommandLineOptions is a convenience class to making adding new command-line
+  # switches trivial.
   class CommandLineOptions < Hash
     # The mappings that convert an option to an actual command line switch.
     OptionsMap = {

@@ -1,6 +1,9 @@
 # encoding: utf-8
 
 module RAR
+  # The Archive class.
+  #
+  # It is the main entry-point to creating a new archive.
   class Archive
     # @return [Array] the list of files.
     attr_accessor :files
@@ -33,7 +36,7 @@ module RAR
     # Add a file to the list of files.
     #
     # @return [Array] the list of files.
-    # @raise ERRNO::ENOENT If the file doesn't exist.
+    # @raise ERRNO::ENOENT if the file doesn't exist.
     def add_file path
       if File.exist? path
         @files << path
@@ -43,13 +46,20 @@ module RAR
     end
 
     # Create the final archive.
+    #
+    # @raise CommandLineError if the exit code indicates an error.
+    # @return true if the command executes without a hitch.
     def create!
       `#{command_line}`
 
-      if $? == 0
-        return true
+      if $? > 1
+        if message = ExitCodeMessage[$?]
+          raise CommandLineError, message
+        else
+          raise CommandLineError, "Unknown exit code: #{$?}"
+        end
       else
-        puts "RAR command failed!"
+        true
       end
     end
 

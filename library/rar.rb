@@ -7,6 +7,10 @@ require 'rar/version'
 require 'rar/archive'
 require 'rar/command_line_options'
 
+# RAR is a Ruby wrapper for the command-line application rar, also known as
+# WinRAR for Windows. A free evaluation copy can be obtained from RarLab.
+#
+# 
 module RAR
   # A list of messages of what the process exit code might indicate.
   ExitCodeMessages = {

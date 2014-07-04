@@ -11,7 +11,7 @@ module RAR
     # Create a new archive.
     def initialize options = {}
       @files = []
-      @options = options
+      @options = CommandLineOptions.new.merge options
     end
 
     # Add a file to the list of files.
@@ -28,6 +28,7 @@ module RAR
 
     # Create the final archive.
     def create
+      result = IO.popen command_line
       Open3.popen3 command_line do |stdin, stdout, stderr, wait_thread|
       end
     end

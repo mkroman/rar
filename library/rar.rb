@@ -7,6 +7,7 @@ require 'bundler'
 
 require 'rar/version'
 require 'rar/archive'
+require 'rar/command_line_options'
 
 module RAR  
   # Set the path to the executable `rar` file.

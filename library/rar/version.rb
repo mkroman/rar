@@ -6,7 +6,7 @@ module RAR
 
   # Returns the current library version number.
   #
-  # @return [String] The current library version number.
+  # @return [String] the current library version number.
   def self.version
     Version
   end

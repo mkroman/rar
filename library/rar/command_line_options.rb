@@ -11,7 +11,7 @@ module RAR
       old_format:   ->(old_format) { '-vn' if old_format },
       volume_size:  ->(volume_size) { "-v#{volume_size}" },
       compression:  ->(compression = 0) { "-m#{compression}" },
-      exclude_path: ->(exclude_path) { 'ep' },
+      exclude_path: ->(exclude_path) { '-ep' },
     }
 
     # @return [Array] the list of command line options.

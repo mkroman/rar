@@ -2,7 +2,7 @@
 
 module RAR
   # The library version constant.
-  Version = "0.1.2"
+  Version = "0.1.3"
 
   # Returns the current library version number.
   #

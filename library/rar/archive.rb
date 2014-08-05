@@ -53,13 +53,13 @@ module RAR
       rar_process = IO.popen command_line
 
       # Wait for the child rar process to finish.
-      _, exit_status = Process.wait2 rar_process.pid
+      _, status = Process.wait2 rar_process.pid
 
-      if exit_status.to_i > 1
-        if message = ExitCodeMessages[exit_status.to_i]
+      if status.exitstatus > 1
+        if message = ExitCodeMessages[status.exitstatus]
           raise CommandLineError, message
         else
-          raise CommandLineError, "Unknown exit status: #{exit_status}"
+          raise CommandLineError, "Unknown exit status: #{status}"
         end
       else
         true

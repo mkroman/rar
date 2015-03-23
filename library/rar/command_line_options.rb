@@ -12,6 +12,7 @@ module RAR
       volume_size:  ->(volume_size) { "-v#{volume_size}" },
       compression:  ->(compression = 0) { "-m#{compression}" },
       exclude_path: ->(exclude_path) { '-ep' },
+      password:     ->(password) { "-p#{password}" },
     }
 
     # @return [Array] the list of command line options.

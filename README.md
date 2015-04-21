@@ -18,25 +18,29 @@ And you're all set. Extra dependencies will automatically be installed.
 
 Creating an archive and adding arbitrary files to it is simple!
 
-    require 'rar'
+``` ruby
+require 'rar'
 
-    archive = RAR::Archive.new 'archive.rar'
+archive = RAR::Archive.new 'archive.rar'
 
-    archive.add_file 'some-file.txt'
-    archive.add_file 'some-other-file.jpg'
+archive.add_file 'some-file.txt'
+archive.add_file 'some-other-file.jpg'
 
-    archive.create!
+archive.create!
+```
 
 ### Adding command-line options
 
 RAR provides a mapping of verbosely named options for ease of use.
 
-    archive = RAR::Archive.new 'archive.rar', volume_size: 15_000_000
+``` ruby
+archive = RAR::Archive.new 'archive.rar', volume_size: 15_000_000
 
-    archive.add_file 'some-file.txt'
-    archive.add_file 'some-large-file.bin'
+archive.add_file 'some-file.txt'
+archive.add_file 'some-large-file.bin'
 
-    archive.create!
+archive.create!
+```
 
 This example splits the archive into multiple volumes with a size of 15MB.
 

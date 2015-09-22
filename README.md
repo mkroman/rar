@@ -8,6 +8,17 @@ WinRAR for Windows. A free evaluation copy can be obtained from [RarLab](http://
 
 ## Installation
 
+WinRAR must be installed for this gem to work.
+
+### Installing WinRAR for Mac
+
+* [Download the installer](http://www.techspot.com/downloads/5169-winrar-for-mac.html) files and extract.
+* Copy the file titled 'rar' into a folder that's in your `$PATH` such as `/usr/local/bin`. If you're not sure what folders are in your path, run `echo $PATH`.
+* Open a new terminal window and test installation by running `rar`. If you see information about WinRAR, it installed correctly.
+
+
+### Install the gem
+
 `gem install rar`
 
 And you're all set. Extra dependencies will automatically be installed.
